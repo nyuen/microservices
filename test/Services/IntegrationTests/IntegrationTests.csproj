@@ -32,6 +32,10 @@
     <Content Include="Services\Ordering\settings.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="Services\Ordering\settings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -51,12 +55,6 @@
     <PackageReference Include="Microsoft.DotNet.InternalAbstractions" Version="1.0.0" />
     <PackageReference Include="xunit" Version="2.3.0" />
     <PackageReference Include="StackExchange.Redis.strongname" Version="1.2.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Services\Ordering\settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>

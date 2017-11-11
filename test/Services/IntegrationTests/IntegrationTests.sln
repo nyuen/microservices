@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 15.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests.csproj", "{BC5CC37E-803E-4DE2-AF8D-F813E7D289FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC5CC37E-803E-4DE2-AF8D-F813E7D289FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5CC37E-803E-4DE2-AF8D-F813E7D289FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5CC37E-803E-4DE2-AF8D-F813E7D289FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5CC37E-803E-4DE2-AF8D-F813E7D289FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
