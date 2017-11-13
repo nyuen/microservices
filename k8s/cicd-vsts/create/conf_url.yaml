@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: url
+  labels:
+    app: eshop  
+data:
+# Basket.API entries
+  BasketUrl: http://basket 
+  BasketHealthCheckUrl: http://basket/hc 
+  CatalogUrl: http://#{externalDns}#/catalog-api 
+  CatalogHealthCheckUrl: http://catalog/hc 
+  PicBaseUrl: http://#{externalDns}#/catalog-api/api/v1/catalog/items/[0]/pic/ 
+  Marketing_PicBaseUrl: http://#{externalDns}#/marketing-api/api/v1/campaigns/[0]/pic/ 
+  IdentityUrl: http://#{externalDns}#/identity 
+  IdentityHealthCheckUrl: http://identity/hc 
+  OrderingUrl: http://ordering 
+  OrderingHealthCheckUrl: http://ordering/hc 
+  MvcClientExternalUrl: http://#{externalDns}#/webmvc 
+  WebMvcHealthCheckUrl: http://webmvc/hc 
+  MvcClientOrderingUrl: http://ordering 
+  MvcClientCatalogUrl: http://catalog 
+  MvcClientBasketUrl: http://basket 
+  MvcClientMarketingUrl: http://marketing 
+	MvcClientLocationsUrl: http://locations 
+  MarketingHealthCheckUrl: http://marketing/hc 
+  WebSpaHealthCheckUrl: http://webspa/hc 
+  SpaClientMarketingExternalUrl: http://#{externalDns}#/marketing-api 
+  SpaClientOrderingExternalUrl: http://#{externalDns}#/ordering-api 
+  SpaClientCatalogExternalUrl: http://#{externalDns}#/catalog-api 
+  SpaClientBasketExternalUrl: http://#{externalDns}#/basket-api 
+  SpaClientIdentityExternalUrl: http://#{externalDns}#/identity 
+	SpaClientLocationsUrl: http://#{externalDns}#/locations-api 
+  LocationsHealthCheckUrl: http://locations/hc 
+  SpaClientExternalUrl: http://#{externalDns}# 
+  LocationApiClient: http://#{externalDns}#/locations-api 
+  MarketingApiClient: http://#{externalDns}#/marketing-api 
+  BasketApiClient: http://#{externalDns}#/basket-api 
+  OrderingApiClient: http://#{externalDns}#/ordering-api 
+  PaymentHealthCheckUrl: http://payment/hc
