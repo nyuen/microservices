@@ -1,12 +1,12 @@
 #creating configMap for the Nginx frontend
-kubectl create configmap config-files --from-file=nginx-conf=nginx.conf
+kubectl create configmap config-files --from-file=nginx-conf=nginx.conf --save-config
 kubectl label configmap config-files app=eshop
 
 #Creating infrastructures (Ie databases,services bus and redis cache)
-kubectl create -f sql-data.yaml -f basket-data.yaml -f keystore-data.yaml -f rabbitmq.yaml -f nosql-data.yaml
+kubectl create -f sql-data.yaml -f basket-data.yaml -f keystore-data.yaml -f rabbitmq.yaml -f nosql-data.yaml --save-config
 
 #Deploying code deployments (Web APIs, Web apps, ...)
-kubectl create -f services.yaml -f frontend.yaml
+kubectl create -f services.yaml -f frontend.yaml --save-config
 
 #Wait for the front-end url to be ready...for instance 51.141.160.253
 frontendUrl="";
@@ -18,7 +18,7 @@ done
 externalDns=$frontendUrl;
 
 #Create a new configuration map based on the frontendUrl or externalDns that the kubctl service returned
-kubectl create configmap urls \
+kubectl create configmap urls --save-config \
     --from-literal=BasketUrl=http://basket \
     --from-literal=BasketHealthCheckUrl=http://basket/hc \
     --from-literal=CatalogUrl=http://$externalDns/catalog-api \
@@ -52,13 +52,13 @@ kubectl create configmap urls \
     --from-literal=OrderingApiClient=http://$externalDns/ordering-api \
     --from-literal=PaymentHealthCheckUrl=http://payment/hc
 
-kubectl label configmap urls app=eshop
+kubectl label configmap urls app=eshop 
 
 #Deploying configuration from conf_local.yml (externalcfg)
-kubectl create -f conf_local.yml
+kubectl create -f conf_local.yml --save-config
 
 #Creating deployments...
-kubectl create -f deployments.yaml
+kubectl create -f deployments.yaml --save-config
 
 #Remember that the deployements are Paused, we can now update the images with the latest from our Registery before resuming the deployement
 dockerOrg="eshop"
