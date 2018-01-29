@@ -14,8 +14,6 @@ spec:
       - name: basket
         image: #{acr.name}#/eshop/basket.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /basket-api
@@ -90,8 +88,6 @@ spec:
       - name: catalog
         image: #{acr.name}#/eshop/catalog.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /catalog-api
@@ -161,8 +157,6 @@ spec:
       - name: identity
         image: #{acr.name}#/eshop/identity.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /identity
@@ -254,8 +248,6 @@ spec:
       - name: ordering
         image: #{acr.name}#/eshop/ordering.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /ordering-api
@@ -340,8 +332,6 @@ spec:
       - name: locations
         image: #{acr.name}#/eshop/locations.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /locations-api
@@ -426,8 +416,6 @@ spec:
       - name: marketing
         image: #{acr.name}#/eshop/marketing.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /marketing-api
@@ -522,8 +510,6 @@ spec:
       - name: payment
         image: #{acr.name}#/eshop/payment.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /payment-api
@@ -583,8 +569,6 @@ spec:
       - name: webmvc
         image: #{acr.name}#/eshop/webmvc:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /webmvc
@@ -711,8 +695,6 @@ spec:
       - name: webstatus
         image: #{acr.name}#/eshop/webstatus:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: PATH_BASE
           value: /webstatus
@@ -789,8 +771,6 @@ spec:
       - name: webspa
         image: #{acr.name}#/eshop/webspa:#{Build.BuildNumber}#
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regsecret
         env:
         - name: ASPNETCORE_URLS
           value: http://0.0.0.0:80
