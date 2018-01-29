@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: basket
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -14,6 +14,8 @@ spec:
       - name: basket
         image: #{acr.name}#/eshop/basket.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /basket-api
@@ -56,14 +58,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10                 
       imagePullSecrets:
       - name: registry-key
@@ -73,7 +79,7 @@ kind: Deployment
 metadata:
   name: catalog
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -84,6 +90,8 @@ spec:
       - name: catalog
         image: #{acr.name}#/eshop/catalog.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /catalog-api
@@ -121,14 +129,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -138,7 +150,7 @@ kind: Deployment
 metadata:
   name: identity
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -149,6 +161,8 @@ spec:
       - name: identity
         image: #{acr.name}#/eshop/identity.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /identity
@@ -208,14 +222,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -225,7 +243,7 @@ kind: Deployment
 metadata:
   name: ordering
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -236,6 +254,8 @@ spec:
       - name: ordering
         image: #{acr.name}#/eshop/ordering.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /ordering-api
@@ -288,14 +308,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5 
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -305,7 +329,7 @@ kind: Deployment
 metadata:
   name: locations
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -316,6 +340,8 @@ spec:
       - name: locations
         image: #{acr.name}#/eshop/locations.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /locations-api
@@ -368,14 +394,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -385,7 +415,7 @@ kind: Deployment
 metadata:
   name: marketing
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -396,6 +426,8 @@ spec:
       - name: marketing
         image: #{acr.name}#/eshop/marketing.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /marketing-api
@@ -458,14 +490,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -475,7 +511,7 @@ kind: Deployment
 metadata:
   name: payment
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -486,6 +522,8 @@ spec:
       - name: payment
         image: #{acr.name}#/eshop/payment.api:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /payment-api
@@ -513,14 +551,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10       
       imagePullSecrets:
       - name: registry-key      
@@ -530,7 +572,7 @@ kind: Deployment
 metadata:
   name: webmvc
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -541,6 +583,8 @@ spec:
       - name: webmvc
         image: #{acr.name}#/eshop/webmvc:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /webmvc
@@ -635,14 +679,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -652,7 +700,7 @@ kind: Deployment
 metadata:
   name: webstatus
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -663,6 +711,8 @@ spec:
       - name: webstatus
         image: #{acr.name}#/eshop/webstatus:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: PATH_BASE
           value: /webstatus
@@ -728,7 +778,7 @@ kind: Deployment
 metadata:
   name: webspa
 spec:
-  paused: true
+  paused: false
   template:
     metadata:
       labels:
@@ -739,6 +789,8 @@ spec:
       - name: webspa
         image: #{acr.name}#/eshop/webspa:#{Build.BuildNumber}#
         imagePullPolicy: Always
+        imagePullSecrets:
+        - name: regsecret
         env:
         - name: ASPNETCORE_URLS
           value: http://0.0.0.0:80
@@ -828,14 +880,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key

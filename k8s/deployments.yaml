@@ -56,14 +56,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10                 
       imagePullSecrets:
       - name: registry-key
@@ -121,14 +125,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -208,15 +216,17 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
-          periodSeconds: 10 
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
-          periodSeconds: 10      
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5 
       imagePullSecrets:
       - name: registry-key
 ---
@@ -288,15 +298,17 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
-          periodSeconds: 10 
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
-          periodSeconds: 10      
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5  
       imagePullSecrets:
       - name: registry-key
 ---
@@ -368,14 +380,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -458,14 +474,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -513,14 +533,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10       
       imagePullSecrets:
       - name: registry-key      
@@ -635,14 +659,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key
@@ -828,14 +856,18 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 5
+          iinitialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10 
         livenessProbe:
           httpGet:
             path: /hc
             port: 80
             scheme: HTTP 
-          initialDelaySeconds: 60
+          iinitialDelaySeconds: 200
+          timeoutSeconds: 30
+          failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
       - name: registry-key

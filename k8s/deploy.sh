@@ -3,10 +3,10 @@ kubectl create configmap config-files --from-file=nginx-conf=nginx.conf --save-c
 kubectl label configmap config-files app=eshop
 
 #Creating infrastructures (Ie databases,services bus and redis cache)
-kubectl create -f sql-data.yaml -f basket-data.yaml -f keystore-data.yaml -f rabbitmq.yaml -f nosql-data.yaml --save-config
+kubectl apply -f sql-data.yaml -f basket-data.yaml -f keystore-data.yaml -f rabbitmq.yaml -f nosql-data.yaml 
 
 #Deploying code deployments (Web APIs, Web apps, ...)
-kubectl create -f services.yaml -f frontend.yaml --save-config
+kubectl apply -f services.yaml -f frontend.yaml
 
 #Wait for the front-end url to be ready...for instance 51.141.160.253
 frontendUrl="";
@@ -55,14 +55,14 @@ kubectl create configmap urls --save-config \
 kubectl label configmap urls app=eshop 
 
 #Deploying configuration from conf_local.yml (externalcfg)
-kubectl create -f conf_local.yml --save-config
+kubectl apply -f conf_local.yml
 
 #Creating deployments...
-kubectl create -f deployments.yaml --save-config
+kubectl apply -f deployments.yaml
 
 #Remember that the deployements are Paused, we can now update the images with the latest from our Registery before resuming the deployement
 dockerOrg="eshop"
-registryPath=""
+registryPath="niyuen.azurecr.io/"
 imageTag="latest"
 
 kubectl set image deployments/basket basket=$registryPath$dockerOrg/basket.api:$imageTag
