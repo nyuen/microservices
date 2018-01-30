@@ -70,7 +70,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10                 
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -139,7 +139,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -228,7 +228,7 @@ spec:
           timeoutSeconds: 30
           failureThreshold: 5 
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -310,7 +310,7 @@ spec:
           timeoutSeconds: 30
           failureThreshold: 5  
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -394,7 +394,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -488,7 +488,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -547,7 +547,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10       
       imagePullSecrets:
-      - name: registry-key      
+      - name: regsecret      
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -673,7 +673,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -749,7 +749,7 @@ spec:
         ports:
         - containerPort: 80
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -856,7 +856,7 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          iinitialDelaySeconds: 200
+          initialDelaySeconds: 200
           timeoutSeconds: 30
           failureThreshold: 5
           periodSeconds: 10 
@@ -865,9 +865,9 @@ spec:
             path: /hc
             port: 80
             scheme: HTTP 
-          iinitialDelaySeconds: 200
+          initialDelaySeconds: 200
           timeoutSeconds: 30
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret

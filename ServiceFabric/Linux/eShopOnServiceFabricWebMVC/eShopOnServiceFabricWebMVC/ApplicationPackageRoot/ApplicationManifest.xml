@@ -6,7 +6,7 @@
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Parameters>
     <Parameter Name="WebMVC_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="IdentityUrl" DefaultValue="" />
+    <Parameter Name="IdentityUrl" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5105/" />
     <Parameter Name="InstrumentationKey" DefaultValue="" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
@@ -22,6 +22,7 @@
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
         <PortBinding ContainerPort="80" EndpointRef="WebMVCTypeEndpoint"/>
+        <RepositoryCredentials AccountName="niyuen" Password="dNhRqqju35R3CGIA6wjAC+4FPx34bVEZ" PasswordEncrypted="false"/>
       </ContainerHostPolicies>
     </Policies>
   </ServiceManifestImport>

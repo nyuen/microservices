@@ -3,7 +3,7 @@ version: '3'
 services:
 
   basket.api:
-    image: eshop/basket.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/basket.api:${TAG:-local}
     build:
       context: ./src/Services/Basket/Basket.API
       dockerfile: Dockerfile    
@@ -13,7 +13,7 @@ services:
       - rabbitmq
 
   catalog.api:
-    image: eshop/catalog.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/catalog.api:${TAG:-local}
     build:
       context: ./src/Services/Catalog/Catalog.API
       dockerfile: Dockerfile    
@@ -22,7 +22,7 @@ services:
       - rabbitmq
 
   identity.api:
-    image: eshop/identity.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/identity.api:${TAG:-local}
     build:
       context: ./src/Services/Identity/Identity.API
       dockerfile: Dockerfile    
@@ -30,7 +30,7 @@ services:
       - sql.data
 
   ordering.api:
-    image: eshop/ordering.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/ordering.api:${TAG:-local}
     build:
       context: ./src/Services/Ordering/Ordering.API
       dockerfile: Dockerfile    
@@ -39,7 +39,7 @@ services:
       - rabbitmq
 
   marketing.api:
-    image: eshop/marketing.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/marketing.api:${TAG:-local}
     build:
       context: ./src/Services/Marketing/Marketing.API
       dockerfile: Dockerfile    
@@ -50,7 +50,7 @@ services:
       - rabbitmq
 
   webspa:
-    image: eshop/webspa:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/webspa:${TAG:-local}
     build:
       context: ./src/Web/WebSPA
       dockerfile: Dockerfile    
@@ -62,7 +62,7 @@ services:
       - marketing.api
 
   webmvc:
-    image: eshop/webmvc:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/webmvc:${TAG:-local}
     build:
       context: ./src/Web/WebMVC
       dockerfile: Dockerfile    
@@ -74,13 +74,13 @@ services:
       - marketing.api
 
   webstatus:
-    image: eshop/webstatus:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/webstatus:${TAG:-local}
     build:
       context: ./src/Web/WebStatus
       dockerfile: Dockerfile
 
   payment.api:
-    image: eshop/payment.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/payment.api:${TAG:-local}
     build:
       context: ./src/Services/Payment/Payment.API
       dockerfile: Dockerfile
@@ -88,7 +88,7 @@ services:
       - rabbitmq    
     
   locations.api:
-    image: eshop/locations.api:${TAG:-latest}
+    image: niyuen.azurecr.io/eshop/locations.api:${TAG:-local}
     build:
       context: ./src/Services/Location/Locations.API
       dockerfile: Dockerfile

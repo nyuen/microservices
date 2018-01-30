@@ -5,15 +5,15 @@
                      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Parameters>
-    <Parameter Name="IdentityApi_InstanceCount" Value="1" />
-    <Parameter Name="SpaClient" Value="http://demoatos.westus.cloudapp.azure.com:5104" />
-    <Parameter Name="XamarinCallback" Value="http://demoatos.westus.cloudapp.azure.com:5105/xamarincallback" />
-    <Parameter Name="MvcClient" Value="http://demoatos.westus.cloudapp.azure.com:5100" />
-    <Parameter Name="LocationApiClient" Value="http://demoatos.westus.cloudapp.azure.com:5109" />
-    <Parameter Name="MarketingApiClient" Value="http://demoatos.westus.cloudapp.azure.com:5110" />
-    <Parameter Name="BasketApiClient" Value="http://demoatos.westus.cloudapp.azure.com:5103" />
-    <Parameter Name="OrderingApiClient" Value="http://demoatos.westus.cloudapp.azure.com:5102" />
-    <Parameter Name="InstrumentationKey" Value="" />
+    <Parameter Name="IdentityApi_InstanceCount" DefaultValue="1" />
+    <Parameter Name="SpaClient" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5104" />
+    <Parameter Name="XamarinCallback" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5105/xamarincallback" />
+    <Parameter Name="MvcClient" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5100" />
+    <Parameter Name="LocationApiClient" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5109" />
+    <Parameter Name="MarketingApiClient" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5110" />
+    <Parameter Name="BasketApiClient" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5103" />
+    <Parameter Name="OrderingApiClient" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5102" />
+    <Parameter Name="InstrumentationKey" DefaultValue="" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 

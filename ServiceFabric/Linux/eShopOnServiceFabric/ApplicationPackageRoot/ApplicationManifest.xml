@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ApplicationManifest ApplicationTypeName="eShopOnServiceFabricType"
-                     ApplicationTypeVersion="1.0.0"
+                     ApplicationTypeVersion="1.0.2"
                      xmlns="http://schemas.microsoft.com/2011/01/fabric"
                      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -11,9 +11,9 @@
     <Parameter Name="OrderingApi_InstanceCount" DefaultValue="-1" />
     <Parameter Name="CatalogApi_InstanceCount" DefaultValue="-1" />
     <Parameter Name="BasketApi_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="IdentityUrlExternal" DefaultValue="" />
-    <Parameter Name="PicBaseUrlCatalog" DefaultValue="" />
-    <Parameter Name="PicBaseUrlMarketing" DefaultValue="" />
+   <Parameter Name="IdentityUrlExternal" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5105" />
+    <Parameter Name="PicBaseUrlCatalog" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5101/api/v1/catalog/items/[0]/pic/" />
+    <Parameter Name="PicBaseUrlMarketing" DefaultValue="http://demoatos.westus.cloudapp.azure.com:5110/api/v1/campaigns/[0]/pic/" />
     <Parameter Name="InstrumentationKey" DefaultValue="" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
@@ -30,6 +30,7 @@
     </EnvironmentOverrides>
     <Policies>
     <ContainerHostPolicies CodePackageRef="Code">
+      <RepositoryCredentials AccountName="niyuen" Password="teR1UheEntqDv17a01xKbHKj6A/Pwa2c" PasswordEncrypted="false"/>
       <PortBinding ContainerPort="80" EndpointRef="MarketingApiTypeEndpoint"/>
     </ContainerHostPolicies>
       </Policies>
@@ -42,6 +43,7 @@
     </EnvironmentOverrides>
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
+        <RepositoryCredentials AccountName="niyuen" Password="teR1UheEntqDv17a01xKbHKj6A/Pwa2c" PasswordEncrypted="false"/>
         <PortBinding ContainerPort="80" EndpointRef="LocationsApiTypeEndpoint"/>
       </ContainerHostPolicies>
     </Policies>
@@ -53,6 +55,7 @@
     </EnvironmentOverrides>
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
+        <RepositoryCredentials AccountName="niyuen" Password="teR1UheEntqDv17a01xKbHKj6A/Pwa2c" PasswordEncrypted="false"/>
         <PortBinding ContainerPort="80" EndpointRef="PaymentApiTypeEndpoint"/>
       </ContainerHostPolicies>
     </Policies>
@@ -65,6 +68,7 @@
     </EnvironmentOverrides>
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
+        <RepositoryCredentials AccountName="niyuen" Password="teR1UheEntqDv17a01xKbHKj6A/Pwa2c" PasswordEncrypted="false"/>
         <PortBinding ContainerPort="80" EndpointRef="OrderingApiTypeEndpoint"/>
       </ContainerHostPolicies>
     </Policies>
@@ -77,18 +81,20 @@
     </EnvironmentOverrides>
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
+        <RepositoryCredentials AccountName="niyuen" Password="teR1UheEntqDv17a01xKbHKj6A/Pwa2c" PasswordEncrypted="false"/>
         <PortBinding ContainerPort="80" EndpointRef="CatalogApiTypeEndpoint"/>
       </ContainerHostPolicies>
     </Policies>
   </ServiceManifestImport>
   <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="BasketApiPkg" ServiceManifestVersion="1.0.0" />
+    <ServiceManifestRef ServiceManifestName="BasketApiPkg" ServiceManifestVersion="1.0.3" />
     <EnvironmentOverrides CodePackageRef="Code">
       <EnvironmentVariable Name="IdentityUrlExternal" Value="[IdentityUrlExternal]"/>
       <EnvironmentVariable Name="ApplicationInsights__InstrumentationKey" Value="[InstrumentationKey]"/>
     </EnvironmentOverrides>
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
+        <RepositoryCredentials AccountName="niyuen" Password="teR1UheEntqDv17a01xKbHKj6A/Pwa2c" PasswordEncrypted="false"/>
         <PortBinding ContainerPort="80" EndpointRef="BasketApiTypeEndpoint"/>
       </ContainerHostPolicies>
     </Policies>
