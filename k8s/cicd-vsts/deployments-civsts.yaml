@@ -70,7 +70,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10                 
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -139,7 +139,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -230,7 +230,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -314,7 +314,7 @@ spec:
           failureThreshold: 5 
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -398,7 +398,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -492,7 +492,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -551,7 +551,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10       
       imagePullSecrets:
-      - name: registry-key      
+      - name: regsecret      
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -677,7 +677,7 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -753,7 +753,7 @@ spec:
         ports:
         - containerPort: 80
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -874,4 +874,4 @@ spec:
           failureThreshold: 5
           periodSeconds: 10      
       imagePullSecrets:
-      - name: registry-key
+      - name: regsecret
